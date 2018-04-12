@@ -7,22 +7,15 @@
 
 The issue about the software is tackled directly by explaining the launch files that runs the application in the PatrolBot. They  are called **patbotsd_navigation.launch** and **patbotsd_directions_navigation.launch**. These launch files are found under **patbot_self_driving/patbotsd/launch**. And, in order to launch the application, one must type the following commands in a terminator terminal   **roslaunch patbotsd patbotsd_navigation.launch** or **roslaunch patbotsd patbotsd_directions_navigation.launch**. These launch files  run the following packages and launch files: 
 
-*  The **patbot_self_driving description** is: 
+*  The **patbot_self_driving** description is: 
       * **patbotsd_slam_gmapping.launch** a launch file that  runs the gmapping package which in turn launches the laser based on SLAM package  that creates a 2D occupancy grid map, [9].
-      * **patbotsd_asus.launch**, a launch file that launches the **openni.launch** file that runs the asus driver. Also, it launches the **pointcloud_to_laserscan** file that converts the **point_cloud** asus readings to **laserscan** data, [10,11]. 
-       
-       
-         \item \textbf{rosaria}, a package that runs the \textbf{RosAria} node that provides a ROS interface for PatrolBot.   
-         \item \textbf{hokuyo\_node}, a package that runs the \textbf{hokuyo\_node}  that provides a ROS interface for the hokuyo laser sensor, \cite{hokuyo:11}.
-
-\item \textbf{patbotsd}, a package that runs the  \textbf{patbotsd\_filter\_hokuyo} node that has to do with the filtering off some laser readings that are produced by some obstacles in the robot. 
-
-\item \textbf{patbotsd}, a package that runs the  \textbf{patbotsd\_laser\_asus} node that has to do with the combination of 2D laser and 2D depth asus readings.
-
-
-\item \textbf{patbotsd}, a package that runs the  \textbf{patbotsd\_map\_maker} node that has to do with the self driving of the PatBot in the empty space of the indoor environment while making a 2D map based on the  laser and the camera\_depth\_points readings. The main idea of this node is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the MR turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area.
-
-\item \textbf{patbotsd}, a package that runs the  \textbf{patbotsd\_asus\_groundfloor\_remove} node that has to do with the removing of the ground\_floor of the 3D $"\slash camera \slash depth \slash points"$ PointCloud2 asus topic. 
+      * **patbotsd_asus.launch**, a launch file that launches the **openni.launch** file that runs the asus driver. Also, it launches the **pointcloud_to_laserscan** file that converts the **point_cloud** asus readings to **laserscan** data, [10,11].     
+      * **rosaria**, a package that runs the **RosAria** node that provides a ROS interface for PatrolBot, [12].   
+      * **hokuyo_node**, a package that runs the **hokuyo_node**  that provides a ROS interface for the hokuyo laser sensor, [13].
+      * **patbotsd**, a package that runs the  **patbotsd_filter_hokuyo** node that has to do with the filtering off some laser readings that are produced by some obstacles in the robot. 
+      * **patbotsd**, a package that runs the  **patbotsd_laser_asus** node that has to do with the combination of 2D laser and 2D depth asus readings.
+      * **patbotsd**, a package that runs the  **patbotsd_map_maker** node that has to do with the self driving of the PatBot in the empty space of the indoor environment while making a 2D map based on the            laser and the camera\_depth\_points readings. The main idea of this node is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the MR turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area.
+      * **patbotsd**, a package that runs the  **patbotsd_asus_groundfloor_remove** node that has to do with the removing of the ground_floor of the 3D "/camera/depth/points" PointCloud2 asus topic. 
       
       
 <ul>
@@ -81,8 +74,12 @@ The issue about the software is tackled directly by explaining the launch files 
 
 
 
- [9] ROS. gmapping. [Online]. Available: http://wiki.ros.org/gmapping.
+ [9]  ROS. gmapping. [Online]. Available: http://wiki.ros.org/gmapping.
  
 [10] ——. openni launch. [Online]. Available: http://wiki.ros.org/openni launch.
 
 [11] ——. pointcloud to laserscan. [Online]. Available: http://wiki.ros.org/pointcloud to laserscan.
+
+[12] ——. RosAria node. [Online]. Available: http://wiki.ros.org/ROSARIA.
+
+[13] ——. hokuyo node. [Online]. Available: http://wiki.ros.org/hokuyo node.
