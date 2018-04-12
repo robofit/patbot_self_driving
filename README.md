@@ -1,11 +1,7 @@
 # patbot_self_driving
 ## Package description:
 
----
-title: "Untitled"
-output: html_document
-bibliography: library.bib
----
+
 
 
 
@@ -81,7 +77,7 @@ The issue about the software is tackled directly by explaining the launch files 
 </ul>
 
 
-##Bibliogrhapy
+## Bibliogrhapy
 
 
 
