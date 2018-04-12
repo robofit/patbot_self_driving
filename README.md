@@ -1,5 +1,4 @@
-# patbot_self_driving
-## Package description:
+# Package description:
 
 
 
@@ -28,7 +27,7 @@ The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **
 
 
 
-##Instalation instructions:
+## Instalation instructions:
 <ul>
   <li> cd ~/ros/catkin_ws/src </li>
   <li> git clone https://github.com/robofit/but_sensor_fusion.git </li>
@@ -36,13 +35,13 @@ The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **
   <li> catkin_make </li>
 </ul>
 
-##Run simulation:
+## Run simulation:
 <ul>
   <li> roslaunch but_laser_rgbd_fusion laser_rgbd.launch
 </ul>
 
 
-## Bibliogrhapy
+# Bibliogrhapy
 
 
 
