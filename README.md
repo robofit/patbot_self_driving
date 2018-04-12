@@ -2,7 +2,7 @@
 ##Package description:
 
 
-The issue about the software is tackled directly by explaining the launch files that runs the application in the PatrolBot. They  are called <span style="font-weight: bold;">patbotsd_navigation.launch</span> and <span style="font-weight: bold;">patbotsd_directions_navigation.launch</span>. These launch files are found under <span style="font-weight: bold;">patbot\_self_driving/patbotsd/launch/</span>. And, in order to launch the application, one must type the following commands in a terminator terminal   <span style="font-weight: bold;">roslaunch patbotsd patbotsd_navigation.launch</span> or   <span style="font-weight: bold;">roslaunch patbotsd patbotsd_directions_navigation.launch</span>. These launch files  run the following packages and launch files: 
+The issue about the software is tackled directly by explaining the launch files that runs the application in the PatrolBot. They  are called **patbotsd_navigation.launch** and <span style="font-weight: bold;">patbotsd_directions_navigation.launch</span>. These launch files are found under <span style="font-weight: bold;">patbot\_self_driving/patbotsd/launch/</span>. And, in order to launch the application, one must type the following commands in a terminator terminal   <span style="font-weight: bold;">roslaunch patbotsd patbotsd_navigation.launch</span> or   <span style="font-weight: bold;">roslaunch patbotsd patbotsd_directions_navigation.launch</span>. These launch files  run the following packages and launch files: 
 
 <ul>
   <li> The but_laser_rgbd_fusion package description is: </li>
