@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<!--arg name="model" /-->
+	<arg name="gui" default="false" />
+        <param name="robot_description" command="$(find xacro)/xacro.py '$(find patbotsd_description)/urdf/patbot.xacro'" />
+	<param name="use_gui" value="$(arg gui)"/>
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+<!-- Start the patbot gmapping launch file-->
+<include file="$(find patbotsd)/launch/patbotsd_slam_gmapping.launch" />
+
+
+<!-- Start the patbot asus pointcloud_to_laser launch file-->
+<include file="$(find patbotsd)/launch/patbotsd_asus.launch" />
+
+
+<!-- Start the RosAria node -->
+<node name="RosAria" pkg="rosaria" type="RosAria" respawn="true" output="screen" />
+
+<!-- Start the Hokuyo node -->
+<node name="hokuyo_node" pkg="hokuyo_node" type="hokuyo_node" respawn="false" output="screen" />
+
+<!-- Start the filter hokuyo node -->
+<node name="patbotsd_filter_hokuyo" pkg="patbotsd" type="patbotsd_filter_hokuyo" respawn="false" output="screen" /> 
+
+
+
+<!-- Converts to pointcloud and pointcloud_2 the laser and xtion coordinates -->
+<node name="patbotsd_laser_asus" pkg="patbotsd" type="patbotsd_laser_asus" respawn="false" output="screen" />
+
+	
+<!--Starts the navigation empty space node-->
+<node name="patbotsd_map_maker" pkg="patbotsd" type="patbotsd_map_maker_laser_asus_rotation" respawn="false" output="screen" />
+
+<!--Remove the ground floor from asus in the depth image-->
+<node name="patbotsd_asus_groundfloor_remove" pkg="patbotsd" type="patbotsd_asus_groundfloor_remove" respawn="false" output="screen" />
+
+<!--Run RVIZ-->
+<!--
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find patbotsd)/launch/patbotsd_navigation.rviz" />
+-->
+
+
+</launch>
