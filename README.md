@@ -1,14 +1,20 @@
 # patbot_self_driving
 ##Package description:
 
+
+The issue about the software is tackled directly by explaining the launch files that runs the application in the PatrolBot. They  are called <span style="font-weight: bold;">patbotsd_navigation.launch</span> and <span style="font-weight: bold;">patbotsd_directions_navigation.launch</span>. These launch files are found under <span style="font-weight: bold;">patbot\_self_driving/patbotsd/launch/</span>. And, in order to launch the application, one must type the following commands in a terminator terminal   <span style="font-weight: bold;">roslaunch patbotsd patbotsd_navigation.launch</span> or   <span style="font-weight: bold;">roslaunch patbotsd patbotsd_directions_navigation.launch</span>. These launch files  run the following packages and launch files: 
+
 <ul>
   <li> The but_laser_rgbd_fusion package description is: </li>
     <ul>
-      <li>   **patbotsd_slam_gmapping.launch**, a launch file that  runs the gmapping package which in turn launches the laser based on SLAM package  that creates a 2D occupancy grid map.  <li>
+      <li>  <span style="font-weight: bold;">patbotsd_slam_gmapping.launch</span>, a launch file that  runs the gmapping package which in turn launches the laser based on SLAM package  that creates a 2D occupancy grid map.  <li>
       <li> filter_hokuyo filters the sonar readings to a specified min and max ranges. </li>
       <li> laser_rgbd_pc2 converts the data readings to pc and pc2 formats. </li>
       <li> laser_rgbd_registration makes sensor data readings alignment. </li>
       <li> laser_rgbd_fusion fuses both sensor data readings. </li>
+      <li style="font-weight: bold;">
+    <p><span style="font-weight: bold;">Text</span></p>
+  </li>
     </ul>
   </li>
   <li> The package fuses data from the environment which is obtained  by a Hokuyo laser and a RGB-D camera. </li>
