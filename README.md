@@ -1,6 +1,6 @@
 # PatrolBot Self Driving main repository.
 
-Autonomous driving for map making of a clutter environments is a complex task due to the robot has to deal with precise measurements of the environment, in other words the robot must have a good field of view of the environment in turn. This technical report mainly presents the functioning and description of the ROS package called patbot self driving that has to do with the navigation of a PatrolBot in the empty area of a indoor environment while making a 2D map by means of a laser hokuyo and a 3D depth asus sensors.
+Autonomous driving for map making of a clutter environments is a complex task due to the robot has to deal with precise measurements of the environment, in other words the robot must have a good field of view of the environment in turn. We mainly present the functioning and description of the ROS package called patbot self driving that has to do with the navigation of a PatrolBot in the empty area of a indoor environment while making a 2D map by means of a laser hokuyo and a 3D depth asus sensors.
 
 ## Package description:
 
