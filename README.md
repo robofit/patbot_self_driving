@@ -51,7 +51,7 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 **Mode 2:** the main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode was tested in a bit cluttered corridor and with some people around, the MR was navigating successfully in the empty area, just there were situations were the robot did not enter in some areas due to the cones are separated by 45 degrees. This problem can be solved by placing more cones in the front of the robot.
 
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=fUunIjcg0NE&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
