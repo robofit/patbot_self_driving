@@ -66,10 +66,10 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
  [9]  ROS. gmapping. [Online]. Available: http://wiki.ros.org/gmapping.
  
-[10] ——. openni launch. [Online]. Available: http://wiki.ros.org/openni launch.
+[10] ——. openni launch. [Online]. Available: http://wiki.ros.org/openni_launch.
 
-[11] ——. pointcloud to laserscan. [Online]. Available: http://wiki.ros.org/pointcloud to laserscan.
+[11] ——. pointcloud to laserscan. [Online]. Available: http://wiki.ros.org/pointcloud_to_laserscan.
 
 [12] ——. RosAria node. [Online]. Available: http://wiki.ros.org/ROSARIA.
 
-[13] ——. hokuyo node. [Online]. Available: http://wiki.ros.org/hokuyo node.
+[13] ——. hokuyo node. [Online]. Available: http://wiki.ros.org/hokuyo_node.
