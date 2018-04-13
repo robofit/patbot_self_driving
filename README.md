@@ -33,7 +33,7 @@ Autonomous driving for map making of a clutter environments is a complex task du
 
 ## Functionality
 
-The system can be operated in two different modes: 
+The system operates in two different modes: 
 
 **Mode 1:**  The main idea  is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the mobile robot (MR) turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area. The **mode 1** can be launched by the file  **roslaunch patbotsd patbotsd_navigation.launch**. This mode was tested in a bit cluttered  corridor and it was found that the robot got stuck in a loop  in certain areas, whereas when it was tested on a clutter open area space the navigation was successful.
 
