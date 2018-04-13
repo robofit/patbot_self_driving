@@ -42,10 +42,12 @@ The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **
 
 
 # Functionality
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be
-" target="_blank"><img src="http://img.youtube.com/vi/y8OI2HpYXLQ&feature=youtu.be/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/y8OI2HpYXLQ&feature=youtu.be/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/y8OI2HpYXLQ&feature=youtu.be/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 # Bibliogrhapy
 
