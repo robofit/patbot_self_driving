@@ -35,9 +35,9 @@ Autonomous driving for map making of a clutter environments is a complex task du
 
 The system can be operated in two different modes: 
 
-**Mode 1**  The main idea of this node is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the mobile robot (MR) turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area. The **mode 1** can be launched by the file  **roslaunch patbotsd patbotsd_navigation.launch**.
+**Mode 1:**  The main idea  is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the mobile robot (MR) turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area. The **mode 1** can be launched by the file  **roslaunch patbotsd patbotsd_navigation.launch**.
 
-**Mode 2** the main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**
+**Mode 2:** the main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**
 
 
  
