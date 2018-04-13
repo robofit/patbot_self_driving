@@ -47,7 +47,7 @@ Once the launch the file  **roslaunch patbotsd patbotsd_navigation.launch** or *
 
 The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **\scan_xtion** topics which are synchronized and combined in a single LaserScan message and published in the **\scan_laser_asus** topic. Then, either the  **patbotsd_map_maker_laser_asus_rotation** or **patbotsd_map_maker_laser_asus_directions** nodes take as an input the **\scan_laser_asus** topic and drives the PatrolBot in the empty space of the indoor environment while the **gmapping_node** is making a  map on a 2D grid. 
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/y8OI2HpYXLQ&feature=youtu.be/0.jpg" 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/y8OI2HpYXLQ/maxresdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
