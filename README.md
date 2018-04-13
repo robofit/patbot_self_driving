@@ -65,9 +65,10 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 
 ## Run simulation:
-<ul>
-  <li> roslaunch but_laser_rgbd_fusion laser_rgbd.launch
-</ul>
+
+*  roslaunch patbotsd patbotsd_navigation.launch
+*  roslaunch patbotsd patbotsd_directions_navigation.launch
+
 
 # Bibliogrhapy
 
