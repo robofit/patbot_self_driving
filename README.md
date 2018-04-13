@@ -4,7 +4,7 @@
 
 
 
-The issue about the software is tackled directly by explaining the launch files that runs the application in the PatrolBot. They  are called **patbotsd_navigation.launch** and **patbotsd_directions_navigation.launch**. These launch files are found under **patbot_self_driving/patbotsd/launch**. And, in order to launch the application, one must type the following commands in a terminator terminal   **roslaunch patbotsd patbotsd_navigation.launch** or **roslaunch patbotsd patbotsd_directions_navigation.launch**. These launch files  run the following packages and launch files: 
+The issue about the software is tackled directly by explaining the launch files that runs the application in the PatrolBot. They  are called **patbotsd_navigation.launch** and **patbotsd_directions_navigation.launch**. These launch files are found under **/patbotsd/launch**. And, in order to launch the application, one must type the following commands in a terminal   **roslaunch patbotsd patbotsd_navigation.launch** or **roslaunch patbotsd patbotsd_directions_navigation.launch**. These launch files  run the following packages and launch files: 
 
 
 * **patbotsd_slam_gmapping.launch** a launch file that  runs the gmapping package which in turn launches the laser based on SLAM package  that creates a 2D occupancy grid map, [9].
@@ -19,10 +19,7 @@ The issue about the software is tackled directly by explaining the launch files 
      * **patbotsd**, a package that runs the  **patbotsd_asus_groundfloor_remove** node that has to do with the removing of the ground_floor of the 3D "/camera/depth/points" PointCloud2 asus topic. 
       
   
-Once the launch file **roslaunch patbotsd patbotsd_navigation.launch** is launched, it runs two packages **joint_state_publisher** and  **robot_state_publisher** which in turn runs the **joint_state_publisher** and  **robot_state_publisher** nodes respectively. These nodes  have to do with  the publishing of all the join states and their transform tree (tf) of the states of the robot. Then, it establishes communication between the laptop-PatrolBot, laptop-laser and laptop-asus by running the **RosAria**, **hokuyo_node** nodes and the **openni.launch** launch file. Moreover, the **patbotsd_filter_hokuyo** node takes as an input  the **\scan** topic from the hokuyo laser and gives as an output the **scan\filter** topic which contain the filtered \scan ranges.  Furthermore, the **patbotsd_asus_groundfloor_remove** node takes as an input the the **\camera\points** topic that contains the PointCloud2 from the asus sensor and gives as output the **\PC2_asus_cut_image** topic which contains the PointCloud2 with the ground floor removed. Then, the **pointcloud_to_laserscan** node takes as an input the **\PC2_asus_cut_image** topic and delivers the   **\scan_xtion** topic which contain a LaserScan message. 
 
-
-The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **\scan_xtion** topics which are synchronized and combined in a single LaserScan message and published in the **\scan_laser_asus** topic. Then, the **patbotsd_map_maker** node takes as an input the **\scan_laser_asus** topic and drives the PatrolBot in the empty space of the indoor environment while the **gmapping_node** is making a  map on a 2D grid. 
       
 
 
@@ -42,6 +39,12 @@ The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **
 
 
 # Functionality
+
+Once the launch file **roslaunch patbotsd patbotsd_navigation.launch** is launched, it runs two packages **joint_state_publisher** and  **robot_state_publisher** which in turn runs the **joint_state_publisher** and  **robot_state_publisher** nodes respectively. These nodes  have to do with  the publishing of all the join states and their transform tree (tf) of the states of the robot. Then, it establishes communication between the laptop-PatrolBot, laptop-laser and laptop-asus by running the **RosAria**, **hokuyo_node** nodes and the **openni.launch** launch file. Moreover, the **patbotsd_filter_hokuyo** node takes as an input  the **\scan** topic from the hokuyo laser and gives as an output the **scan\filter** topic which contain the filtered \scan ranges.  Furthermore, the **patbotsd_asus_groundfloor_remove** node takes as an input the the **\camera\points** topic that contains the PointCloud2 from the asus sensor and gives as output the **\PC2_asus_cut_image** topic which contains the PointCloud2 with the ground floor removed. Then, the **pointcloud_to_laserscan** node takes as an input the **\PC2_asus_cut_image** topic and delivers the   **\scan_xtion** topic which contain a LaserScan message. 
+
+
+The **patbotsd_laser_asus** node has as an input the **\scan_filter** and the **\scan_xtion** topics which are synchronized and combined in a single LaserScan message and published in the **\scan_laser_asus** topic. Then, the **patbotsd_map_maker** node takes as an input the **\scan_laser_asus** topic and drives the PatrolBot in the empty space of the indoor environment while the **gmapping_node** is making a  map on a 2D grid. 
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/y8OI2HpYXLQ&feature=youtu.be/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
