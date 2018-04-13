@@ -1,4 +1,4 @@
-## PatrolBot Self Driving main repository.
+# PatrolBot Self Driving main repository.
 
 Autonomous driving for map making of a clutter environments is a complex task due to the robot has to deal with precise measurements of the environment, in other words the robot must have a good field of view of the environment in turn. This technical report mainly presents the functioning and description of the ROS package called patbot self driving that has to do with the navigation of a PatrolBot in the empty area of a indoor environment while making a 2D map by means of a laser hokuyo and a 3D depth asus sensors.
 
@@ -28,21 +28,10 @@ The issue about the software is tackled directly by explaining the launch files 
 
 
 
-## Instalation instructions:
-
-*  cd ~/ros/catkin_ws/src 
-*  git clone https://github.com/robofit/patbot_self_driving.git 
-*  cd ../ 
-*  catkin_make 
 
 
-## Run simulation:
-<ul>
-  <li> roslaunch but_laser_rgbd_fusion laser_rgbd.launch
-</ul>
 
-
-# Functionality
+## Functionality
 
 Once the launch file **roslaunch patbotsd patbotsd_navigation.launch** is launched, it runs two packages **joint_state_publisher** and  **robot_state_publisher** which in turn runs the **joint_state_publisher** and  **robot_state_publisher** nodes respectively. These nodes  have to do with  the publishing of all the join states and their transform tree (tf) of the states of the robot. Then, it establishes communication between the laptop-PatrolBot, laptop-laser and laptop-asus by running the **RosAria**, **hokuyo_node** nodes and the **openni.launch** launch file. Moreover, the **patbotsd_filter_hokuyo** node takes as an input  the **\scan** topic from the hokuyo laser and gives as an output the **scan\filter** topic which contain the filtered \scan ranges.  Furthermore, the **patbotsd_asus_groundfloor_remove** node takes as an input the the **\camera\points** topic that contains the PointCloud2 from the asus sensor and gives as output the **\PC2_asus_cut_image** topic which contains the PointCloud2 with the ground floor removed. Then, the **pointcloud_to_laserscan** node takes as an input the **\PC2_asus_cut_image** topic and delivers the   **\scan_xtion** topic which contain a LaserScan message. 
 
@@ -55,6 +44,21 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=y8OI2HpYXLQ&feature=youtu.be" target="_blank"><img src="http://img.youtube.com/vi/y8OI2HpYXLQ&feature=youtu.be/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+
+
+## Instalation instructions:
+
+*  cd ~/ros/catkin_ws/src 
+*  git clone https://github.com/robofit/patbot_self_driving.git 
+*  cd ../ 
+*  catkin_make 
+
+
+## Run simulation:
+<ul>
+  <li> roslaunch but_laser_rgbd_fusion laser_rgbd.launch
+</ul>
 
 # Bibliogrhapy
 
