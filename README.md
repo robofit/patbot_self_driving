@@ -35,7 +35,7 @@ Autonomous driving for map making of a clutter environments is a complex task du
 
 The system operates in two different modes: 
 
-**Mode 1:**  The main idea  is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the mobile robot (MR) turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area. The **mode 1** can be launched by the file  **roslaunch patbotsd patbotsd_navigation.launch**. This mode was tested in a bit cluttered  corridor and it was found that the robot got stuck in a loop  in certain areas, whereas when it was tested on a clutter open area space the navigation was successful.
+**Mode 1:**  The main idea  is to let the PatrolBot to navigate forward till an obstacle boundary is reached, then the mobile robot (MR) turns to the left with a small angle till it finds space to move forward. It keeps rotating and moving forward till a full rotation takes place. After that, it starts turning to the right and moving forward till a full rotation also takes place. This process repeats constantly and by doing so, the MR covers all the empty space of the area. The **mode 1** can be launched by the file  **roslaunch patbotsd patbotsd_navigation.launch**. This mode is suitable for a open area where the robot can move freely in the middle. 
 
 
 
@@ -48,7 +48,7 @@ The system operates in two different modes:
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
-**Mode 2:** the main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode was tested in a bit cluttered corridor and with some people around, the MR was navigating successfully in the empty area, just there were situations were the robot did not enter in some areas due to the cones are separated by 45 degrees. This problem can be solved by placing more cones in the front of the robot.
+**Mode 2:** the main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode is suitable for more cluttered spaces. This mode was tested in a bit cluttered corridor and with some people around, the MR was navigating successfully in the empty area, just there were situations were the robot did not enter in some areas due to the range cones are separated by 45 degrees. This problem can be solved by placing more cones in the front of the robot.
 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fUunIjcg0NE&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
