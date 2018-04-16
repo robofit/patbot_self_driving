@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<robot name="awc" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+
+
+<!-- -->
+
+<xacro:property name="lenght_base_link" value="0.72" />
+<xacro:property name="width_base_link" value="0.47" />
+<xacro:property name="height_base_link" value="0.40" />
+
+<xacro:property name="width_seat" value="0.46" />
+<xacro:property name="length_seat" value="0.43" />
+<xacro:property name="height_seat" value="0.1" />
+
+<xacro:property name="width_feed_support" value="0.25" />
+<xacro:property name="length_feed_support" value="0.42" />
+<xacro:property name="height_feed_support" value="0.05" />
+
+<xacro:property name="width_wheel" value="0.04" />
+<xacro:property name="radius_wheel" value="0.1" />
+
+<xacro:property name="width_back_wheel" value="0.05" />
+<xacro:property name="radius_back_wheel" value="0.03" />
+
+<xacro:property name="radius_front_wheel" value="0.03" />
+
+
+
+<xacro:property name="width_handle" value="0.31" />
+<xacro:property name="length_handle" value="0.1" />
+<xacro:property name="height_handle" value="0.04" />
+
+<xacro:property name="width_rest" value="0.43" />
+<xacro:property name="length_rest" value="0.37" />
+<xacro:property name="height_rest" value="0.1" />
+
+<xacro:property name="width_head" value="0.16" />
+<xacro:property name="length_head" value="0.20" />
+<xacro:property name="height_head" value="0.05" />
+
+<xacro:property name="wheel_front_mass" value="5"/>
+
+<xacro:property name="chassisMass" value="50"/>
+
+<!-- -->
+
+        
+<xacro:property name="PI" value="3.1415926535897931"/>
+
+<xacro:property name="chassisHeight" value="0.1"/>
+<xacro:property name="chassisLength" value="0.4"/>
+<xacro:property name="chassisWidth" value="0.2"/>
+
+
+<xacro:property name="casterRadius" value="0.05"/>
+<xacro:property name="casterMass" value="5"/>
+
+<xacro:property name="wheelWidth" value="0.05"/>
+<xacro:property name="wheelRadius" value="0.1"/>
+<xacro:property name="wheelPos" value="0.2"/>
+<xacro:property name="wheelMass" value="5"/>
+
+<xacro:property name="cameraSize" value="0.05"/>
+<xacro:property name="cameraMass" value="0.1"/>
+
+<xacro:include filename="$(find patbotsd_description)/urdf/patbot.gazebo" />
+<xacro:include filename="$(find patbotsd_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find patbotsd_description)/urdf/macros.xacro" />
+
+
+
+<!--xacro:include filename="$(find awc_description)/urdf/sensors/kinect.urdf.xacro"/-->
+<xacro:include filename="$(find patbotsd_description)/urdf/sensors/asus_xtion_pro.urdf.xacro"/>
+
+
+
+
+<!--Base_link -->
+<link name="footprint">
+    <visual>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+            <mesh filename="package://patbotsd_description/meshes/patbot_structure.dae"/>
+        </geometry>
+        <material name="cyan"/>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0.05" rpy="0 0 0"/>
+        <geometry>
+             <mesh filename="package://patbotsd_description/meshes/patbot_structure.dae"/>
+        </geometry>
+    </collision>
+    <inertial>
+       <origin xyz="0 0 0.05" rpy="0 0 0"/>
+       <mass value="${chassisMass}"/>
+	   <box_inertia m="${chassisMass}" x="${chassisLength}" y="${chassisWidth}" z="${chassisHeight}"/>
+    </inertial>
+</link>
+
+
+
+<link name="base_link" />
+
+<joint name="base_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="footprint"/>
+  <origin rpy="0 0 0" xyz="-0 0.0 0.0"/>
+</joint>
+
+
+
+
+
+
+
+<!-- front wheels -->
+<wheel lr="right"  o_y="0.205"/>
+<wheel lr="left"  o_y="-0.205"/>
+
+
+<!-- kinect/asus -->
+<!--sensor_kinect parent="seat"/-->
+<sensor_asus_xtion_pro parent="footprint"/>
+
+
+<!--right back wheel -->
+
+
+  <link name="right_back_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_back_wheel}"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+    <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+             <sphere radius="${radius_back_wheel}"/>
+        </geometry>
+    </collision>
+    <inertial>
+       <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia
+	   ixx="1.0" ixy="0.0" ixz="0.0"
+	   iyy="1.0" iyz="0.0"
+	   izz="1.0"/>
+    </inertial>
+  </link>
+
+<joint name="base_to_right_back_wheel" type="fixed">
+    <parent link="footprint"/>
+    <child link="right_back_wheel"/>
+    <axis xyz="1 1 1"/>
+    <origin rpy="1.57075 0 0" xyz="-0.17 -0.15 0.03"/>
+  </joint>
+ 
+
+
+<!--right front wheel -->
+
+
+  <link name="right_front_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_front_wheel}"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+    <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+             <sphere radius="${radius_front_wheel}"/>
+        </geometry>
+    </collision>
+    <inertial>
+       <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia
+	   ixx="1.0" ixy="0.0" ixz="0.0"
+	   iyy="1.0" iyz="0.0"
+	   izz="1.0"/>
+    </inertial>
+  </link>
+
+<joint name="base_to_right_front_wheel" type="fixed">
+    <parent link="footprint"/>
+    <child link="right_front_wheel"/>
+    <axis xyz="1 1 1"/>
+    <origin rpy="1.57075 0 0" xyz="0.17 -0.15 0.03"/>
+  </joint>
+ 
+
+
+
+<!--left back wheel -->
+
+  <link name="left_back_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_back_wheel}"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+    <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+             <sphere radius="${radius_back_wheel}"/>
+        </geometry>
+    </collision>
+    <inertial>
+       <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia
+	   ixx="1.0" ixy="0.0" ixz="0.0"
+	   iyy="1.0" iyz="0.0"
+	   izz="1.0"/>
+    </inertial>
+  </link>
+
+  <joint name="base_to_left_back_wheel" type="fixed">
+    <parent link="footprint"/>
+    <child link="left_back_wheel"/>
+    <axis xyz="1 1 1"/>
+    <origin rpy="1.57075 0 0" xyz="-0.17 0.15 0.03"/>
+  </joint>
+
+
+<!--left front wheel -->
+
+
+  <link name="left_front_wheel">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="${radius_front_wheel}"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+    <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+             <sphere radius="${radius_front_wheel}"/>
+        </geometry>
+    </collision>
+    <inertial>
+       <origin rpy="0 0 0" xyz="0 0 0"/>
+       <mass value="1"/>
+       <inertia
+	   ixx="1.0" ixy="0.0" ixz="0.0"
+	   iyy="1.0" iyz="0.0"
+	   izz="1.0"/>
+    </inertial>
+  </link>
+
+<joint name="base_to_left_front_wheel" type="fixed">
+    <parent link="footprint"/>
+    <child link="left_front_wheel"/>
+    <axis xyz="1 1 1"/>
+    <origin rpy="1.57075 0 0" xyz="0.17 0.15 0.03"/>
+  </joint>
+
+
+
+<!-- Hokuyo Laser -->
+  <link name="laser">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://patbotsd_description/meshes/hokuyo.dae"/>
+      </geometry>
+    <material name="red" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+<joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.05 0 0.30" rpy="3.1416 0 0"/>
+    <parent link="footprint"/>
+    <child link="laser"/>
+  </joint>
+
+
+
+
+</robot>
