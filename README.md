@@ -11,10 +11,10 @@ Autonomous driving for map making of a clutter environments is a complex task du
 
 
 
-* **patbotsd_slam_gmapping.launch** a launch file that  runs the gmapping package which in turn launches the laser based on SLAM package  that creates a 2D occupancy grid map, [9].
-* **patbotsd_asus.launch**, a launch file that launches the **openni.launch** file that runs the asus driver. Also, it launches the **pointcloud_to_laserscan** file that converts the **point_cloud** asus readings to **laserscan** data, [10,11].     
-* **rosaria**, a package that runs the **RosAria** node that provides a ROS interface for PatrolBot, [12].   
-* **hokuyo_node**, a package that runs the **hokuyo_node**  that provides a ROS interface for the hokuyo laser sensor, [13].
+* **patbotsd_slam_gmapping.launch** a launch file that  runs the gmapping package which in turn launches the laser based on SLAM package  that creates a 2D occupancy grid map, [1].
+* **patbotsd_asus.launch**, a launch file that launches the **openni.launch** file that runs the asus driver. Also, it launches the **pointcloud_to_laserscan** file that converts the **point_cloud** asus readings to **laserscan** data, [2,3].     
+* **rosaria**, a package that runs the **RosAria** node that provides a ROS interface for PatrolBot, [4].   
+* **hokuyo_node**, a package that runs the **hokuyo_node**  that provides a ROS interface for the hokuyo laser sensor, [5].
 * **patbotsd**, a package that runs the following nodes:
      * **patbotsd_filter_hokuyo** node that has to do with the filtering off some laser readings that are produced by some obstacles in the robot. 
      * **patbotsd_laser_asus** node that has to do with the combination of 2D laser and 2D depth asus readings.
@@ -48,7 +48,7 @@ The system operates in two different modes:
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
-**Mode 2:** the main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode is suitable for more cluttered spaces. This mode was tested in a bit cluttered corridor and with some people around, the MR was navigating successfully in the empty area, just there were situations were the robot did not enter in some areas due to the range cones are separated by 45 degrees. It is believe that this problem can be solved by placing more cones in the front of the robot.
+**Mode 2:** The main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode is suitable for more cluttered spaces. This mode was tested in a bit cluttered corridor and with some people around, the MR was navigating successfully in the empty area, just there were situations were the robot did not enter in some areas due to the range cones are separated by 45 degrees. It is believe that this problem can be solved by placing more cones in the front of the robot.
 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fUunIjcg0NE&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
@@ -74,15 +74,15 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
 
- [9]  ROS. gmapping. [Online]. Available: http://wiki.ros.org/gmapping.
+ [1]  ROS. gmapping. [Online]. Available: http://wiki.ros.org/gmapping.
  
-[10] ——. openni launch. [Online]. Available: http://wiki.ros.org/openni_launch.
+[2] ——. openni launch. [Online]. Available: http://wiki.ros.org/openni_launch.
 
-[11] ——. pointcloud to laserscan. [Online]. Available: http://wiki.ros.org/pointcloud_to_laserscan.
+[3] ——. pointcloud to laserscan. [Online]. Available: http://wiki.ros.org/pointcloud_to_laserscan.
 
-[12] ——. RosAria node. [Online]. Available: http://wiki.ros.org/ROSARIA.
+[4] ——. RosAria node. [Online]. Available: http://wiki.ros.org/ROSARIA.
 
-[13] ——. hokuyo node. [Online]. Available: http://wiki.ros.org/hokuyo_node.
+[5] ——. hokuyo node. [Online]. Available: http://wiki.ros.org/hokuyo_node.
 
 
 
