@@ -48,7 +48,7 @@ The system operates in two different modes:
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
-**Mode 2:** The main idea is to place range cones along the range laser which scans the front part of the robot by 180 degrees. To this end,  a total of 5 range cones were place and distributed in front of the robot and to find whether they are empty to allow the robot to navigate. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode was tested in a bit cluttered corridor and with some people around.
+**Mode 2:** The main idea is to place range cones along the range laser which scans the front part of the robot by 180 degrees. To this end,  a total of 5 range cones were placed and distributed in front of the robot. Then the aim is to find whether they are empty to allow the robot to navigate. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode was tested in a bit cluttered corridor and with some people around.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fUunIjcg0NE&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
