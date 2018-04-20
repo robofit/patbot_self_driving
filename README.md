@@ -20,6 +20,7 @@ Autonomous driving for map making of a clutter environments is a complex task du
      * **patbotsd_laser_asus** node that has to do with the combination of 2D laser and 2D depth asus readings.
      * **patbotsd_map_maker_laser_asus_rotation** node that has to do with the self driving of the PatBot in the empty space of the indoor environment while making a 2D map based on the  laser and the camera/depth/points readings. 
      * **patbotsd_map_maker_laser_asus_directions** node that has to do also with the safe driving of the robot on the empty space of the area. 
+     * **patbotsd_map_maker_laser_asus_range_cones** node that has to do also with the safe driving of the robot on the empty space of the area.
      * **patbotsd_asus_groundfloor_remove** node that has to do with the removing of the ground_floor of the 3D "/camera/depth/points" PointCloud2 asus topic. 
       
   
@@ -54,7 +55,6 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 The **mode 2** was modified by adding two more range cones along the range laser making a total of 7 ones. 
-
 <a href="https://www.youtube.com/watch?v=HpYqldQJJ2Q&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/HpYqldQJJ2Q/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
