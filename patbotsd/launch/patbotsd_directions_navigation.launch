@@ -36,6 +36,10 @@
 <!--Starts the navigation empty space node-->
 <node name="patbot_map_maker" pkg="patbot_map_maker" type="patbotsd_map_maker_laser_asus_directions" respawn="false" output="screen" />
 
+<!--Starts the navigation empty space node-->
+<!--
+<node name="patbot_map_maker" pkg="patbot_map_maker" type="patbotsd_map_maker_laser_asus_range_cones" respawn="false" output="screen" />
+-->
 
 <!--Remove the ground floor from asus in the depth image-->
 <node name="patbotsd_asus_groundfloor_remove" pkg="patbotsd" type="patbotsd_asus_groundfloor_remove" respawn="false" output="screen" />
