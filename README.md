@@ -54,7 +54,7 @@ alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fUunIjcg0NE&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
-The **mode 2** was modified by adding two more range cones along the range laser making a total of 7 ones. 
+The **mode 2** was modified by adding two more range cones along the range laser making a total of 7 ones. The source code can be found in the node **patbotsd_map_maker_laser_asus_range_cones**.
 <a href="https://www.youtube.com/watch?v=HpYqldQJJ2Q&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/HpYqldQJJ2Q/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
