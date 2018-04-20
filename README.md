@@ -58,6 +58,11 @@ The **mode 2** was modified by adding two more range cones along the range laser
 <a href="https://www.youtube.com/watch?v=HpYqldQJJ2Q&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/HpYqldQJJ2Q/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
+In order to extend the functionality of the application,  a mapping bag-pack solution was mounted on the robot. This  solution is able to make a 3D map of the environment by means of two  Lidars which are placed on the top with a certain inclination to cover the whole area.
+
+<a href="https://www.youtube.com/watch?v=udxwwbGjEiU&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/udxwwbGjEiU/hqdefault.jpg" 
+alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
+
 
 
 ## Instalation instructions:
