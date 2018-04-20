@@ -48,12 +48,17 @@ The system operates in two different modes:
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
 
-**Mode 2:** The main idea is to place range cones  in front of the robot and to find whether they are empty to allow the robot to navigate. These cones are separated about 45 degrees from each other. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode is suitable for more cluttered spaces. This mode was tested in a bit cluttered corridor and with some people around, the MR was navigating successfully in the empty area, just there were situations were the robot did not enter in some areas due to the range cones are separated by 45 degrees. 
+**Mode 2:** The main idea is to place range cones along the range laser which scans the front part of the robot by 180 degrees. To this end,  a total of 5 range cones were place and distributed in front of the robot and to find whether they are empty to allow the robot to navigate. The **mode 2** is launched by the  file **roslaunch patbotsd patbotsd_directions_navigation.launch**. This mode was tested in a bit cluttered corridor and with some people around.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=fUunIjcg0NE&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/fUunIjcg0NE/hqdefault.jpg" 
 alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
 
-The **mode 2** was modified by adding more range cones along the range laser which scans the front part of the robot by 180 degress. A total of 7 range cones were place and distributed. 
+The **mode 2** was modified by adding two more range cones along the range laser making a total of 7 ones. 
+
+<a href="https://www.youtube.com/watch?v=HpYqldQJJ2Q&feature=youtu.be" target="_blank"><img src="http://i3.ytimg.com/vi/HpYqldQJJ2Q/hqdefault.jpg" 
+alt="IMAGE ALT TEXT HERE" width="480" height="360" border="10" /></a>
+
+
 
 ## Instalation instructions:
 
